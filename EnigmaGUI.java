@@ -41,4 +41,7 @@ public class EnigmaGUI {
         });
     }
 
+    public static void main(String args[]) {
+        EnigmaGUI gui = new EnigmaGUI();
+    }
 }
