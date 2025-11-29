@@ -1,7 +1,19 @@
 import java.awt.*;
 import javax.swing.*;
 public class EnigmaFrame {
-    public static void main(String args[]) {
+    // Variables for action listeners in EnigmaGUI
+    public JComboBox<Integer> cbInner;
+    public JComboBox<Integer> cbMiddle;
+    public JComboBox<Integer> cbOut;
+    public JTextField tfInit;
+    public JButton bEncrypt;
+    public JButton bDecrypt;
+    public JTextField tfInput;
+    public JTextField tfOutput;
+
+
+    // Frame Setup
+    public EnigmaFrame() {
         JFrame f = new JFrame();
         f.setTitle("CSCI2113 GUI Lab15");
         f.setSize(1000, 600);
@@ -19,7 +31,7 @@ public class EnigmaFrame {
         innerPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         JLabel lInner = new JLabel("Inner");
-        JComboBox cbInner = new JComboBox<>(rotorNums);
+        cbInner = new JComboBox<>(rotorNums);
 
         innerPanel.add(lInner);
         innerPanel.add(cbInner);
@@ -29,7 +41,7 @@ public class EnigmaFrame {
         middlePanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         JLabel lMiddle = new JLabel("Middle");
-        JComboBox cbMiddle = new JComboBox<>(rotorNums);
+        cbMiddle = new JComboBox<>(rotorNums);
 
         middlePanel.add(lMiddle);
         middlePanel.add(cbMiddle);
@@ -39,7 +51,7 @@ public class EnigmaFrame {
         outPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         JLabel lOut = new JLabel("Out");
-        JComboBox cbOut = new JComboBox<>(rotorNums);
+        cbOut = new JComboBox<>(rotorNums);
 
         outPanel.add(lOut);
         outPanel.add(cbOut);
@@ -49,7 +61,7 @@ public class EnigmaFrame {
         initPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         JLabel lInit = new JLabel("Initial Positions");
-        JTextField tfInit = new JTextField();
+        tfInit = new JTextField();
         tfInit.setPreferredSize(new Dimension(30, 20));
 
         initPanel.add(lInit);
@@ -59,7 +71,7 @@ public class EnigmaFrame {
         JPanel encryptPanel = new JPanel();
         encryptPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        JButton bEncrypt = new JButton("Encrypt");
+        bEncrypt = new JButton("Encrypt");
 
         encryptPanel.add(bEncrypt);
 
@@ -67,7 +79,7 @@ public class EnigmaFrame {
         JPanel decryptPanel = new JPanel();
         decryptPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        JButton bDecrypt = new JButton("Decrypt");
+        bDecrypt = new JButton("Decrypt");
 
         decryptPanel.add(bDecrypt);
 
@@ -90,7 +102,7 @@ public class EnigmaFrame {
         inputPanel.setLayout(new BorderLayout());
 
         JLabel lInput = new JLabel("Input ");
-        JTextField tfInput = new JTextField();
+        tfInput = new JTextField();
         tfInput.setPreferredSize(new Dimension(100, 30));
 
         inputPanel.add(lInput, BorderLayout.WEST);
@@ -102,7 +114,7 @@ public class EnigmaFrame {
         outputPanel.setLayout(new BorderLayout());
 
         JLabel lOutput = new JLabel("Output ");
-        JTextField tfOutput = new JTextField();
+        tfOutput = new JTextField();
         tfOutput.setPreferredSize(new Dimension(100, 30));
 
         outputPanel.add(lOutput, BorderLayout.WEST);
