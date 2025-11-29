@@ -4,7 +4,7 @@ public class EnigmaFrame {
     public static void main(String args[]) {
         JFrame f = new JFrame();
         f.setTitle("CSCI2113 GUI Lab15");
-        f.setSize(900, 600);
+        f.setSize(1000, 600);
         f.setLocation(100, 100);
         
 
@@ -14,7 +14,7 @@ public class EnigmaFrame {
 
         // ----------- TOP PANEL --------------------------------
         JPanel topPanel = new JPanel();
-        topPanel.setLayout(new GridLayout(1, 5, 10, 0));
+        topPanel.setLayout(new GridLayout(1, 6, 10, 0));
 
         // Inner Panel
         JPanel innerPanel = new JPanel();
@@ -36,7 +36,7 @@ public class EnigmaFrame {
         middlePanel.add(lMiddle);
         middlePanel.add(cbMiddle);
 
-        // Middle Panel
+        // Out Panel
         JPanel outPanel = new JPanel();
         outPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 
@@ -46,11 +46,41 @@ public class EnigmaFrame {
         outPanel.add(lOut);
         outPanel.add(cbOut);
 
+        // Initial Positions Panel
+        JPanel initPanel = new JPanel();
+        initPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+        JLabel lInit = new JLabel("Initial Positions");
+        JTextField tfInit = new JTextField();
+        tfInit.setPreferredSize(new Dimension(30, 20));
+
+        initPanel.add(lInit);
+        initPanel.add(tfInit);
+
+        // Encrypt Panel
+        JPanel encryptPanel = new JPanel();
+        encryptPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+        JButton bEncrypt = new JButton("Encrypt");
+
+        encryptPanel.add(bEncrypt);
+
+        // Decrypt Panel
+        JPanel decryptPanel = new JPanel();
+        decryptPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+        JButton bDecrypt = new JButton("Decrypt");
+
+        decryptPanel.add(bDecrypt);
+
         // Put all together in Top Panel
         topPanel.add(innerPanel);
         topPanel.add(middlePanel);
         topPanel.add(outPanel);
-        f.add(topPanel, BorderLayout.NORTH);    //add after all top panels are made
+        topPanel.add(initPanel);
+        topPanel.add(encryptPanel);
+        topPanel.add(decryptPanel);
+        f.add(topPanel, BorderLayout.NORTH);    //add topPanel to top of frame
 
             
         // ----------- END OF FRAME FILE --------------------------------
